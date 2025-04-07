@@ -1,13 +1,12 @@
 return {
-    "catppuccin/nvim",
-    lazy = false,
-    name = "catppuccin",
-    priority = 1000,
-    config = function()
-        -- setup must be called before loading
-        require("catppuccin").setup({
-            flavour = "macchiato", -- latte, frappe, macchiato, mocha
-        })
-        vim.cmd("colorscheme catppuccin")
-    end,
+	"catppuccin/nvim",
+	lazy = false,
+	name = "catppuccin",
+	priority = 1000,
+	opts = {
+		flavour = "mocha", -- latte, frappe, macchiato, mocha
+	},
+	config = function()
+		vim.cmd("colorscheme catppuccin")
+	end,
 }
