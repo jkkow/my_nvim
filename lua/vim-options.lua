@@ -8,7 +8,7 @@ vim.g.python3_host_prog = "C:/Users/jkkow/scoop/shims/python3.exe"
 --- These three lines are all needed to make nvimterminal looks same with my powershell setup
 -- vim.opt.shellcmdflag = "-nologo -noprofile -ExecutionPolicy RemoteSigned -command"
 vim.opt.shellcmdflag =
-	"-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
+"-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
 vim.opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
 vim.opt.shell = "pwsh"
 vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
@@ -18,9 +18,9 @@ vim.opt.shellxquote = ""
 
 -- Basic tab/indentation settings
 vim.opt.expandtab = true -- Replace tabs with spaces
-vim.opt.tabstop = 4 -- Set the width of a tab character to 4 spaces
-vim.opt.shiftwidth = 4 -- Set the width for automatic indentation to 4 spaces
-vim.opt.softtabstop = 4 -- Set the soft tab stop to 4 spaces
+vim.opt.tabstop = 4      -- Set the width of a tab character to 4 spaces
+vim.opt.shiftwidth = 4   -- Set the width for automatic indentation to 4 spaces
+vim.opt.softtabstop = 4  -- Set the soft tab stop to 4 spaces
 
 vim.opt.termguicolors = true
 vim.opt.swapfile = false
@@ -44,7 +44,7 @@ vim.opt.showmode = false
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
 vim.schedule(function()
-	vim.opt.clipboard = "unnamedplus"
+    vim.opt.clipboard = "unnamedplus"
 end)
 
 -- Enable break indent
@@ -68,12 +68,6 @@ vim.opt.timeoutlen = 300
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 
--- Sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
-vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
-
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
 
@@ -89,7 +83,7 @@ vim.opt.scrolloff = 10
 vim.opt.confirm = true
 
 vim.opt.cursorlineopt = "both" -- to enable cursorline!
-vim.opt.ph = 10 -- Maximum number of item in popup menu
+vim.opt.ph = 10                -- Maximum number of item in popup menu
 
 -- Apply settings only for JavaScript files using autocommands
 vim.cmd([[
