@@ -1,6 +1,8 @@
 -- leader key must have set before other plugins are loaded
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- so this is not a good place to locate. 
+-- locate it in 'init.lua' fjle
+-- vim.g.mapleader = " "
+-- vim.g.maplocalleader = " "
 
 vim.g.python3_host_prog = "C:/Users/jkkow/scoop/shims/python3.exe"
 
