@@ -1,4 +1,4 @@
--- leader key must have set before other plugins are loaded
+-- leader key must have set before other plugins are loade
 -- so this is not a good place to locate. 
 -- locate it in 'init.lua' fjle
 -- vim.g.mapleader = " "
