@@ -21,7 +21,7 @@ vim.opt.shellxquote = ""
 -- Basic tab/indentation settings
 vim.opt.expandtab = true -- Replace tabs with spaces
 vim.opt.tabstop = 4      -- Set the width of a tab character to 4 spaces
-vim.opt.shiftwidth = 4   -- Set the width for automatic indentation to 4 spaces
+vim.opt.shiftwidth = 4   -- Set the width for automatic indentation ('>>' or '<<') to 4 spaces
 vim.opt.softtabstop = 4  -- Set the soft tab stop to 4 spaces
 
 vim.opt.termguicolors = true
@@ -40,6 +40,10 @@ vim.opt.mouse = "a"
 
 -- Don't show the mode, because it's arleady in the status line
 vim.opt.showmode = false
+
+vim.opt.virtualedit = 'block'
+vim.opt.inccommand = 'split'
+vim.opt.ignorecase = true
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
@@ -77,7 +81,7 @@ vim.opt.inccommand = "split"
 vim.opt.cursorline = true
 
 -- Minimal number of screen lines to keep above and below the cursor.
-vim.opt.scrolloff = 10
+vim.opt.scrolloff = 15
 
 -- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
 -- instead raise a dialog asking if you wish to save the current file(s)
