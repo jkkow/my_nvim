@@ -1,5 +1,5 @@
 -- leader key must have set before other plugins are loade
--- so this is not a good place to locate. 
+-- so this is not a good place to locate.
 -- locate it in 'init.lua' fjle
 -- vim.g.mapleader = " "
 -- vim.g.maplocalleader = " "
@@ -41,8 +41,8 @@ vim.opt.mouse = "a"
 -- Don't show the mode, because it's arleady in the status line
 vim.opt.showmode = false
 
-vim.opt.virtualedit = 'block'
-vim.opt.inccommand = 'split'
+vim.opt.virtualedit = "block"
+vim.opt.inccommand = "split"
 vim.opt.ignorecase = true
 
 -- Sync clipboard between OS and Neovim.
@@ -90,6 +90,21 @@ vim.opt.confirm = true
 
 vim.opt.cursorlineopt = "both" -- to enable cursorline!
 vim.opt.ph = 10                -- Maximum number of item in popup menu
+
+-- Set visible border line for pane separators
+vim.opt.fillchars = {
+    vert = "║",
+    horiz = "═",
+    horizup = "╩",
+    horizdown = "╦",
+    vertleft = "╣",
+    vertright = "╠",
+    verthoriz = "╬",
+}
+vim.cmd([[
+  highlight WinSeparator guifg=#cba6f7 gui=bold
+  set winhighlight=VertSplit:WinSeparator
+]])
 
 -- Apply settings only for JavaScript files using autocommands
 vim.cmd([[
