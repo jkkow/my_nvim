@@ -1,15 +1,15 @@
-return {
+return { -- Highlight, edit, and navigate code
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-
-    config = function()
-        local configs = require("nvim-treesitter.configs")
-        configs.setup({
-            -- ensure_installed = { "lua", "vim", "vimdoc", "html", "python" },
-            auto_install = true,
-            sync_install = false,
-            highlight = { enable = true },
-            indent = { enable = true },
-        })
-    end,
+    main = "nvim-treesitter.configs", -- Sets main module to use for opts
+    -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+    opts = {
+        ensure_installed = { "html", "lua", "luadoc", "markdown", "markdown_inline", "vim", "vimdoc" },
+        -- Autoinstall languages that are not installed
+        auto_install = true,
+        highlight = {
+            enable = true,
+        },
+        indent = { enable = true },
+    },
 }
