@@ -150,10 +150,7 @@ return {
             },
         })
 
-        -- LSP servers and clients are able to communicate to each other what features they support.
-        --  By default, Neovim doesn't support everything that is in the LSP specification.
-        --  When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
-        --  So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
+       --  Creates new capabilities with nvim cmp, and then broadcast that to the servers.
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
@@ -197,19 +194,7 @@ return {
         }
 
         -- Ensure the servers and tools above are installed
-        --
-        -- To check the current status of installed tools and/or manually install
-        -- other tools, you can run
-        --    :Mason
-        --
-        -- You can press `g?` for help in this menu.
-        --
-        -- `mason` had to be setup earlier: to configure its options see the
-        -- `dependencies` table for `nvim-lspconfig` above.
-        --
-        -- You can add other tools here that you want Mason to install
-        -- for you, so that they are available from within Neovim.
-        local ensure_installed = vim.tbl_keys(servers or {})
+       local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
             "stylua", -- Used to format Lua code
         })
