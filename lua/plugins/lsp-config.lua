@@ -150,7 +150,7 @@ return {
             },
         })
 
-       --  Creates new capabilities with nvim cmp, and then broadcast that to the servers.
+        --  Creates new capabilities with nvim cmp, and then broadcast that to the servers.
         local capabilities = vim.lsp.protocol.make_client_capabilities()
         capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
 
@@ -191,10 +191,26 @@ return {
                     },
                 },
             },
+            pylsp = {
+                settings = {
+                    pylsp = {
+                        plugins = {
+                            pyflakes = { enabled = false },
+                            pycodestyle = { enabled = false },
+                            autopep8 = { enabled = false },
+                            yapf = { enabled = false },
+                            mccabe = { enabled = false },
+                            pylsp_mypy = { enabled = false },
+                            pylsp_black = { enabled = false },
+                            pylsp_isort = { enabled = false },
+                        },
+                    },
+                },
+            },
         }
 
         -- Ensure the servers and tools above are installed
-       local ensure_installed = vim.tbl_keys(servers or {})
+        local ensure_installed = vim.tbl_keys(servers or {})
         vim.list_extend(ensure_installed, {
             "stylua", -- Used to format Lua code
         })
