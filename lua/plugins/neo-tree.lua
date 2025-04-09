@@ -9,7 +9,7 @@ return {
     },
     cmd = "Neotree",
     keys = {
-        { "<C-n>",     ":Neotree toggle<CR>", desc = "NeoTree reveal", silent = true },
+        { "<C-\\>",     ":Neotree toggle<CR>", desc = "NeoTree reveal", silent = true },
         { "<leader>e", ":Neotree focus<CR>",  desc = "NeoTree focus",  silent = true },
     },
     opts = {
