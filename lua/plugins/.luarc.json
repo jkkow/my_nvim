@@ -4,6 +4,7 @@
         "null_ls"
     ],
     "diagnostics.disable": [
-        "undefined-global"
+        "undefined-global",
+        "unused-local"
     ]
 }
