@@ -1,23 +1,3 @@
--- leader key must have set before other plugins are loade
--- so this is not a good place to locate.
--- locate it in 'init.lua' fjle
--- vim.g.mapleader = " "
--- vim.g.maplocalleader = " "
-
-vim.g.python3_host_prog = "C:/Users/jkkow/scoop/shims/python3.exe"
-
-------------------------------------------------------------------------------
---- These three lines are all needed to make nvimterminal looks same with my powershell setup
--- vim.opt.shellcmdflag = "-nologo -noprofile -ExecutionPolicy RemoteSigned -command"
-vim.opt.shellcmdflag =
-"-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
-vim.opt.shellredir = "-RedirectStandardOutput %s -NoNewWindow -Wait"
-vim.opt.shell = "pwsh"
-vim.opt.shellpipe = "2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode"
-vim.opt.shellquote = ""
-vim.opt.shellxquote = ""
-------------------------------------------------------------------------------
-
 -- Basic tab/indentation settings
 vim.opt.expandtab = true -- Replace tabs with spaces
 vim.opt.tabstop = 4      -- Set the width of a tab character to 4 spaces
